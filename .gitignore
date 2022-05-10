@@ -1,0 +1,15 @@
+
+.idea
+
+core/__pycache__/
+
+core/DS_Store
+
+__pycache__/
+
+input/.DS_Store
+
+.DS_Store
+
+
+
