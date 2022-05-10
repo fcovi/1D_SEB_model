@@ -1,17 +1,15 @@
 """ Configuration file for model parameters """
 
 # INPUT DATA
-# run_name = 'EKT2018_rad30_5cm35m'
-# met_file = '/Users/fcovi/Greenland/PyFrEM_runs/EKT/init/met/EKT20182019_metinit.txt'
-# firn_file = '/Users/fcovi/Greenland/PyFrEM_runs/EKT/init/firn/EKT2018_firninit_5cm35m.txt'
-run_name = 'SiteJ2019_nopen'
-met_file = '/Users/fcovi/Greenland/Paper1X/model_runs/SiteJ/init/met/SiteJ2019_metinit.txt'
-firn_file = '/Users/fcovi/Greenland/Paper1X/model_runs/SiteJ/init/firn/SiteJ2019_firninit_5cm35m_Ts.txt'
+path = 'PATH-to-LOCAL-FOLDERS'
+run_name = 'SiteJ2019_ref'
+met_file = '%s/input/met/SiteJ2019_metinit.txt' % path
+firn_file = '%s/input/firn/SiteJ2019_firninit_5cm35m.txt' % path
 
 
 ### AWS information
-elev = 2060  # elevation (m), used to calculate atmospheric pressure
-# elev = 2355  # elevation (m), used to calculate atmospheric pressure
+elev = 2060  # elevation (m), used to calculate atmospheric pressure | Site J
+# elev = 2355  # elevation (m), used to calculate atmospheric pressure | EKT
 z = 2  # (m)  instruments height, used in turbulent fluxes calculation
 
 
@@ -22,7 +20,7 @@ subs_timestep = 15  # Number of subtimesteps per main timestep (to mantain subsu
 
 ### TURBULENCE OPTIONS
 method_turbul = 2  # 1=Ambach | 2=Monin-Obukhov Stability
-z0w_init = 1e-4    # (m) surface roughness length for wind speed, depends on the surface
+z0w_init = 1e-4    # (m) surface roughness length for wind speed, depends on the surface (1e-4)
                    # (e.g. snow or ice), always user prescribed!
 method_z0Te = 2    # 1=fixed ratio | 2=according to Andreas (1987)
                    # method to compute surface roughness length for temperature and water vapor
@@ -36,10 +34,10 @@ Train_treshold = 1.0    # (C)  threshold temperature rain/snow precipitation
 Train_halfrange = 1.0   # (C)  half range temperature rain/snow precipation
                         #      (e.g. Train_treshold +/- Train_halfrange is rain/snow mixture)
 
-### RADIATION PENTRATION OPTION
+### RADIATION PENTRATION OPTIONS
 method_radpen = 1           # Shortwave radiation penetration method: 1=NO | 2=YES
-radpen_folder = '/Users/fcovi/Greenland/PyFrEM/radpen'
-radsfc_dz = 0.01            # (m) thickness of fictitious surface layer
+radpen_folder = '%s/radpen' % path
+radsfc_dz = 0.05            # (m) thickness of fictitious surface layer
 method_grainsize = 2        # Grain size method: 1=consant | 2=Munneke(2011), only used in radiation penetration
 method_drymetamorphism = 2  # Dry snow metamorphism method: 1=NO | 2=Flanner(2006)
 method_drylookuptable = 2   # Lookup table method: 1=lin. interp. | 2=high res. lookup table
@@ -65,6 +63,12 @@ method_conduct = 3   # Snow/Ice conductivity method: 1=Van Dussen, in Sturm (199
                      #      3=Douville(1995) | 4=Jansson, in Sturm(1997) | 5=Ostin & Anderson, in Sturm(1997)
 method_irrwc = 1     # Irrwc method: 1=Schneider(2004) | 2=Coleou(1998)
 method_densif = 1    # Densification method: 0=no dens. | 1=Herron&Langway, adapted by Li & Zwally
+
+
+### PERCOLATION OPTIONS
+method_perc = 1  # Percolation method: 1=tip bucket | 2=Marchenko et al. (2017)
+method_PDF = 1   # Probability Distribution Function type: 1=uniform | 2=linear | 3=normal (Marchenko et al., 2017))
+perc_zlim = 5    # (m) max percolation depth
 
 
 ### PHYSICAL CONSTANTS (should not really be changed)

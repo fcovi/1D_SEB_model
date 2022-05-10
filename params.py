@@ -66,8 +66,8 @@ method_densif = 1    # Densification method: 0=no dens. | 1=Herron&Langway, adap
 
 
 ### PERCOLATION OPTIONS
-method_perc = 2  # Percolation method: 1=tip bucket | 2=Marchenko et al. (2017)
-method_PDF = 3   # Probability Distribution Function type: 1=uniform | 2=linear | 3=normal (Marchenko et al., 2017))
+method_perc = 1  # Percolation method: 1=tip bucket | 2=Marchenko et al. (2017)
+method_PDF = 1   # Probability Distribution Function type: 1=uniform | 2=linear | 3=normal (Marchenko et al., 2017))
 perc_zlim = 5    # (m) max percolation depth
 
 
