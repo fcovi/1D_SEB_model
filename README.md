@@ -1,5 +1,5 @@
 # Surface Energy Balance and Subsurface Model
-Federico Covi - [fcovi@alaska.edu](fcovi@alaska.eud)
+Federico Covi - [federico.covi@cmcc.it](federico.covi@cmcc.it)
 
 One dimensional surface energy balance and subsurface model used in Covi and others (2022): *Challenges in modeling the energy balance and melt in the percolation zone of the Greenland ice sheet*. 
 
